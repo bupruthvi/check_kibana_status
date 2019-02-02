@@ -42,16 +42,17 @@ down_services=[]
 
 with open('kibana_services.json', 'r') as json_file:
     data = json.load(json_file)
-    for da in data:
-        for d in data[da]:
-            while x<len(data[da][d]):
-                resp = os.system('ping ' + data[da][d][x] + ' -c 1')
-                if resp == 0:
-                    pass
-                else:
-                    down_services.append("Service "+ str(data[da][d][x]) + " may be down. Checked at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
-                x+=1
-            x=0
+    for key, value in data.items():
+        for da in data:
+            for d in data[da]:
+                while x<len(data[da][d]):
+                    resp = os.system('ping ' + data[da][d][x] + ' -c 1')
+                    if resp == 0:
+                        pass
+                    else:
+                        down_services.append("Service from " + str(key) + " : " + str(data[da][d][x]) + " time: " + str(datetime.datetime.now().strftime("%m-%d-%Y %H:%M:%S")))
+                    x+=1
+                x=0
 
 if len(down_services)>0:
-    send_email('sender email id','reciever email id',down_services)
+    send_email(config.username,config.username,down_services)
