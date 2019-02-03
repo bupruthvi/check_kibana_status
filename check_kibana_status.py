@@ -1,15 +1,14 @@
 import datetime
 import smtplib
-import config
 import json
 import os
 from email.mime.text import MIMEText
 
-SMTP_PORT=587 #give smtp port
-SMTP_SERVER='smtp.gmail.com' #smtp server
+SMTP_PORT=25 #give smtp port
+SMTP_SERVER='smtprelay.barcapint.com' #smtp server
 
 def send_email(sender, reciever, down):
-    subject='The following Kibana services may be down'
+    subject='Kibana Services may be down'
     all_kibana_services=""
 
     for services in down:
@@ -32,7 +31,6 @@ def send_email(sender, reciever, down):
 
     s = smtplib.SMTP(SMTP_SERVER,SMTP_PORT)
     s.starttls()
-    s.login(config.username,config.password)
     s.sendmail(sender,reciever,msg.as_string())
     print ("Sending email...\nEmail Sent!")
     s.quit()
@@ -55,4 +53,4 @@ with open('kibana_services.json', 'r') as json_file:
                 x=0
 
 if len(down_services)>0:
-    send_email(config.username,config.username,down_services)
+    send_email('noreply-ESaaS@barclays.com','pruthviraj.gowda@barclays.com',down_services)
