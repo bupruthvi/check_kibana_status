@@ -1,0 +1,55 @@
+{
+  "TINA|US|NON-PROD": {
+    "CARDING":[
+      "www.google.com"
+    ],
+    "UTIF":[
+      "www.gmail.com"
+    ],
+    "PUMA":[
+      "www.amazon.com"
+    ],
+    "CARD NOTIFICATION":[
+      "www.facebook.com"
+    ],
+    "CORNFLOW":[
+      "www.yahoo.com"
+    ],
+    "ANALYTICS CHART":[
+      "www.flippingbook.com/404"
+    ],
+    "CCM":[
+      "aws.amazon.com"
+    ],
+    "CARD CONTROL":[
+      "www.apple.com"
+    ],
+    "CUSTCOMMS":[
+      "www.samsung.com"
+    ]
+  },
+  "EDITH|US|PROD": {
+    "ANALYTICS CHART":[
+      "www.google.com",
+      "www.gmail.com",
+      "www.amazon.com",
+      "flippingbook.com/404"
+    ],
+    "CCM": [
+      "flippingbook.com/404",
+      "aws.amazon.com",
+      "www.facebook.com"
+    ],
+    "CARD CONTROL":[
+      "www.apple.com"
+    ],
+    "CUSTCOMMS":[
+      "www.samsung.com"
+    ]
+  },
+  "MACHO|UK|NON-PROD": {
+    "ibdanalyticsfb": [
+      "www.att.com"
+    ]
+  }
+}
